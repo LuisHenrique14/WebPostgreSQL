@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebPostgreSQL.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="login-section">
+    <div class="login-container">
+        
+        <h1>Utilize seu nome para acessar o sistema.</h1>
+        
+            @* <div class="input-container">
+                <input  name="Nome" placeholder="Nome" required>
+            </div>
+            
+            @if (TempData.ContainsKey("Error"))
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
+            <button type="submit">Entrar</button>
+            <div class="create-account-link">
+                <a asp-controller="Usuarios" asp-action="Create">Criar Conta</a>
+            </div> *@
+
+             <h2>Login</h2>
+            <form asp-controller="Home"  asp-action="Login">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label name="Nome"></label>
+                    <input name="Nome" class="form-control" />
+                    <span name="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label name="Senha"></label>
+                    <input name="Senha" type="password" placeholder="Digite a Senha" class="form-control" />
+                    <span name="Senha" class="text-danger"></span>
+                </div>
+            @if (TempData.ContainsKey("Alert"))
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["Alert"]
+                </div>
+            }
+            
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form> 
+
+        
+        
+    </div>
+</section>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
